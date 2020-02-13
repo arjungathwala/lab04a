@@ -39,13 +39,16 @@ public:
   // Returns true if c is a valid word character defined as either
   // a lower-case or upper-case alpha char.
 
-  static std::string stripWord(std::string word);
-  // Words cannot contain any digits or special characters EXCEPT for
+    static std::string makeValidWord(std::string word);
+  // Words cannot contain any digits, or special characters EXCEPT for
   // hyphens (-) and apostrophes (') that occur in the middle of a
   // valid word (the first and last characters of a word must be an alpha
-  // character).
+  // character). All upper case characters in the word should be convertd
+  // to lower case.
   // For example, "can't" and "good-hearted" are considered valid words.
-  // "12mOnkEYs-$" will be stripped to "mOnkEYs"
+  // "12mOnkEYs-$" will be converted to "monkeys".
+  // "Pa55ive" will be stripped "paive".
+
 
 private:
   const static size_t CAPACITY = 100;

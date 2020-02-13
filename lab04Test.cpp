@@ -39,8 +39,8 @@ int main() {
   ASSERT_EQUALS(10,w.getTotalWords());
   ASSERT_EQUALS(true,w.isWordChar('a'));
   ASSERT_EQUALS(false,w.isWordChar('%'));
-  ASSERT_EQUALS("fum",w.stripWord("...fum***"));
-  ASSERT_EQUALS("",w.stripWord("--$$--"));
+  ASSERT_EQUALS("fum",w.makeValidWord("...fum***"));
+  ASSERT_EQUALS("",w.makeValidWord("--$$--"));
 
   WordCount a;
 

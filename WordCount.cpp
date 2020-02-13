@@ -40,7 +40,7 @@ int WordCount::getNumUniqueWords() const {
 }
 
 int WordCount::getWordCount(std::string word) const {
-	word = stripWord(word);
+	word = makeValidWord(word);
 	for (size_t i = 0; i < word.length(); i++) {
 		word[i] = tolower(word[i]);
 	}
@@ -56,7 +56,7 @@ int WordCount::getWordCount(std::string word) const {
 
 int WordCount::incrWordCount(std::string word) {
 	//cout << "5 start" << endl;
-	word = stripWord(word);
+	word = makeValidWord(word);
 	if (word == "")
 		return 0;
 
@@ -86,7 +86,7 @@ bool WordCount::isWordChar(char c) {
 }
 
 
-std::string WordCount::stripWord(std::string word) {
+std::string WordCount::makeValidWord(std::string word) {
 	cout << "7 start" << endl;
 	//trim left
 	if (word.length() == 0)
