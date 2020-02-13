@@ -42,7 +42,7 @@ int WordCount::getNumUniqueWords() const {
 int WordCount::getWordCount(std::string word) const {
 	word = stripWord(word);
 	for (size_t i = 0; i < word.length(); i++) {
-		word[i] = toupper(word[i]);
+		word[i] = tolower(word[i]);
 	}
 	//cout << "recieved word : " << word << endl;
 	for (vector<pair<string,size_t>>::const_iterator it = table[hash(word)].begin(); it < table[hash(word)].end(); it++) {
@@ -61,7 +61,7 @@ int WordCount::incrWordCount(std::string word) {
 		return 0;
 
 	for (size_t i = 0; i < word.length(); i++) {
-		word[i] = toupper(word[i]);
+		word[i] = tolower(word[i]);
 	}
 	for (vector<pair<string,size_t>>::iterator it = table[hash(word)].begin(); it < table[hash(word)].end(); it++) {
 		//cout << "found word " << it->first << endl;
@@ -131,7 +131,7 @@ std::string WordCount::stripWord(std::string word) {
 		}
 	}
 	cout << "7 : 3" << endl;
-	// convert string to upper
+	// convert string to lower
 	cout << "string : " << word << endl;
 	cout << "7 end" << endl;
 	return word;

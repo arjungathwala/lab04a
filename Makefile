@@ -1,4 +1,4 @@
-# lab04a by Eric Buckland
+# lab04a by Arjun Gathwala
 
 CXX=clang++
 # CXX=g++
